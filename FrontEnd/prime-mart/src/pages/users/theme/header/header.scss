@@ -23,7 +23,7 @@
             margin-left: 15px;
 
             span {
-                font-size: 18px;
+                font-size: 14px;
                 margin-left: 6px;
             }
         }
@@ -46,7 +46,7 @@
         column-gap: 20px;
 
         li {
-            font-size: 18px;
+            font-size: 14px;
             display: flex;
             align-items: center;
             column-gap: 4px;
@@ -68,6 +68,108 @@
             }
         }
     }
+}
 
+.header__logo {
+    padding: 15px 0;
+}
 
+.header__menu {
+    padding: 24px 0;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            list-style-type: none;
+            position: relative;
+
+            a {
+                text-decoration: none;
+                font-size: 16px;
+                color: map.get($theme-color, "bold-text");
+                text-transform: uppercase;
+                font-weight: 400;
+                transition: all, 0.3s;
+                padding: 5px 0;
+                display: block;
+            }
+        }
+
+        li:hover .header__submenu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .active a {
+            color: map.get($theme-color, "main");
+        }
+
+        .header__submenu {
+            background: oklch(0.869 0.022 252.894);
+            display: block;
+            position: absolute;
+            width: 180px;
+            z-index: 9;
+            padding: 5px;
+            transition: all, 0.3s;
+            opacity: 0;
+            visibility: hidden;
+
+            li {
+
+                a {
+                    text-transform: capitalize;
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: white;
+                    padding: 10px 10px;
+                }
+
+                :hover {
+                    color: map.get($theme-color, "main");
+                }
+            }
+        }
+    }
+}
+
+.header__cart {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 24px 0;
+
+    ul {
+        display: flex;
+        // margin-right: 25px;
+
+        li {
+            list-style-type: none;
+            position: relative;
+            margin-left: 16px;
+
+            svg {
+                font-size: 28px;
+                color: map.get($theme-color, "nol-text");
+            }
+
+            span {
+                color: map.get($theme-color, "main");
+                background: #f5f5f5;
+                position: absolute;
+                height: 16px;
+                width: 26px;
+                border-radius: 45%;
+                display: inline-block;
+                text-align: center;
+                line-height: 17px;
+                font-size: 10px;
+                font-weight: 500;
+                left: 12px;
+                top: -5px;
+            }
+        }
+    }
 }

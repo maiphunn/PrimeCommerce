@@ -1,19 +1,23 @@
 @use "sass:map";
 @import "./_theme";
+@import "./_responsive";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
 html,
 body {
     margin: 0;
 }
 
+;
+
 * {
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
 }
 
 .container {
-    max-width: 868px;
+    max-width: 1110px;
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
@@ -28,4 +32,24 @@ body {
 .col-6 {
     flex: 0 0 50%;
     max-width: 50%;
+}
+
+@include Responsive($DESKTOP) {
+    .col-xl-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .col-xl-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@include Responsive($MEDIUM_DEVICE) {
+    .col-lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+        background: aqua;
+    }
 }

@@ -67,4 +67,24 @@
             margin: 0 auto;
         }
     }
+
+    .react-tabs {
+        ul {
+            display: flex;
+            // flex-direction: row;
+            list-style-type: none;
+            justify-content: center;
+            margin: 50px 0;
+
+        }
+
+        li {
+            font-size: 18px;
+            color: map.get($theme-color, "nol-text");
+            margin-right: 20px;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+        }
+    }
 }

@@ -6,21 +6,23 @@ import { FiUser } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import { GoMail } from "react-icons/go";
 import { formatter } from 'utils/format';
-import { AiOutlineShoppingCart, AiOutlineMessage } from "react-icons/ai";
+import { AiOutlineShoppingCart, AiOutlineMessage, AiOutlinePhone } from "react-icons/ai";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { ROUTERS } from 'utils';
 
 const Header = () => {
+    const [isShowCategories, setIsShowCategories] = useState(true)
     const [memus, setMenus] = useState([
         {
-            name: "Trang Chủ",
+            name: "Home",
             path: ROUTERS.USER.HOME
         },
         {
-            name: "Cửa hàng",
+            name: "Store",
             path: ROUTERS.USER.PRODUCT
         },
         {
-            name: "Sản Phẩm",
+            name: "Products",
             path: "",
             isShowSubMenu: false,
             subMenu: [
@@ -39,11 +41,11 @@ const Header = () => {
             ]
         },
         {
-            name: "Bài viết",
+            name: "About",
             path: ""
         },
         {
-            name: "Liên hệ",
+            name: "Contact",
             path: ""
         }
     ])
@@ -59,7 +61,7 @@ const Header = () => {
                                     <GoMail />
                                     <span>mp@gmail.com</span>
                                 </li>
-                                <li>Miễn phí đơn ship từ {formatter(200000)}</li>
+                                <li>Free shipping from {formatter(200000)}</li>
                             </ul>
                         </div>
                         <div className='col-6 header__top-right'>
@@ -149,6 +151,63 @@ const Header = () => {
                                     </Link>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </div >
+            <div className='container'>
+                <div className='row categories__hero'>
+                    <div className='col-lg-3 categories__hero-container'>
+                        <div className='categories__hero-title' onClick={() => setIsShowCategories(!isShowCategories)}>
+                            <RxHamburgerMenu />
+                            List Products
+                        </div>
+                        {isShowCategories && (
+                            <ul className={isShowCategories ? "" : "hidden"}>
+                                <li><Link to="">Set</Link></li>
+                                <li><Link to="">Top</Link></li>
+                                <li><Link to="">Pants</Link></li>
+                                <li><Link to="">Dress</Link></li>
+                                <li><Link to="">Jacket</Link></li>
+                                <li><Link to="">Shoe</Link></li>
+                            </ul>
+                        )}
+
+                    </div>
+                    <div className='col-lg-9 categories__search-container'  >
+                        <div className='categories__search'>
+                            <div className="categories__search-form">
+                                <form>
+                                    <input
+                                        type="text"
+                                        name='' value=""
+                                        placeholder='What are you looking for?' />
+                                    <button type="submit">Search</button>
+                                </form>
+                            </div>
+                            <div className='categories__search-phone'>
+                                <div className='search__phone-icon'>
+                                    <AiOutlinePhone />
+                                </div>
+                                <div className='search__phone-text'>
+                                    <p>0763.201.335</p>
+                                    <span>24/7 Support</span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='categories__item'>
+                            <div className='categories__item-text'>
+                                <span>  Slay in every way</span>
+                                <h2> Fashion made <br /> just for you</h2>
+                                <p>Your fashion, your rules</p>
+                                <button onClick={() => {
+                                    alert("hihihi")
+                                }} type='submit' className='button-submit'>
+                                    Buy now
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

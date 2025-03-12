@@ -84,7 +84,6 @@ const HomePage = () => {
                 <div className='featured'>
                     <div className='section-title'>
                         <h2>Featured Products</h2>
-                        <h3>xin chao</h3>
                     </div>
                 </div>
             </div>

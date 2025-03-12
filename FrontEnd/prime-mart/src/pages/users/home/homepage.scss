@@ -1,0 +1,70 @@
+@use "sass:map";
+@import "styles/pages/theme";
+
+.hero-carousel {
+    max-width: 1125px !important;
+    margin-top: 50px !important;
+
+    .hero-carousel__list {
+
+        .hero-carousel__list-item {
+            height: 300px;
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: top center;
+            border-radius: 5px;
+
+            p {
+                position: absolute;
+                left: 15%;
+                text-align: center;
+                bottom: 20px;
+                font-size: 12px;
+                text-align: center;
+                color: map.get($theme-color, "nol-text");
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                padding: 12px 0 10px;
+                width: 200px;
+                cursor: pointer;
+                background: rgb(237, 237, 237);
+
+                &:hover {
+                    background: rgb(201, 201, 201);
+                }
+            }
+        }
+
+        .react-multi-carousel-item:not(:first-child):not(:last-child) {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.featured {
+    margin-top: 50px;
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+
+        h2 {
+            position: relative;
+        }
+
+        h2:after {
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: -10px;
+            height: 2px;
+            width: 100px;
+            background: map.get($theme-color, "main");
+            content: "";
+            margin: 0 auto;
+        }
+    }
+}

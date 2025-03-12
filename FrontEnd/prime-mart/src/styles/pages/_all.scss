@@ -39,6 +39,11 @@ body {
     max-width: 50%;
 }
 
+.col-lg-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
 .col-6 {
     flex: 0 0 50%;
     max-width: 50%;
@@ -54,6 +59,13 @@ body {
     background: map.get($theme-color, "main");
     border: none;
     height: 100%;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.9;
+        background: white;
+        color: map.get($theme-color, "main");
+    }
 }
 
 @include Responsive($DESKTOP) {

@@ -18,6 +18,9 @@ import accesImg5 from "assets/users/accessories/accesImg5.png";
 import accesImg6 from "assets/users/accessories/accesImg6.png";
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import "./homepage.scss";
+import { AiOutlineEye, AiOutlineShoppingCart } from 'react-icons/ai';
+import { formatter } from 'utils/format';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
     const responsive = {
@@ -151,9 +154,9 @@ const HomePage = () => {
                     price: 860
                 },
                 {
-                    img: accesImg2,
-                    name: "Canvas Tote Bag",
-                    price: 860
+                    img: bottomImg1,
+                    name: "Camo Shorts",
+                    price: 860000
                 },
             ]
         },
@@ -197,6 +200,61 @@ const HomePage = () => {
                     price: 860000
                 }
             ]
+        },
+        accessories: {
+            title: "Accessories",
+            products: [
+                {
+                    img: accesImg5,
+                    name: "Canvas Tote Bag",
+                    price: 860000
+                },
+                {
+                    img: accesImg1,
+                    name: "CHROMIUM Keychain",
+                    price: 180000
+                },
+                {
+                    img: accesImg2,
+                    name: "Scarf",
+                    price: 580
+                },
+                {
+                    img: accesImg3,
+                    name: "LoadMaster Hauler Bag",
+                    price: 860
+                },
+                {
+                    img: accesImg6,
+                    name: "R-Hood",
+                    price: 860
+                },
+                {
+                    img: accesImg4,
+                    name: "CRUX Keychain",
+                    price: 860
+                },
+            ]
+        },
+        jacket: {
+            title: "Jacket",
+            products: [
+                {
+                    img: jacketImg1,
+                    name: "Denim Jackets",
+                    price: 850000
+                },
+                {
+                    img: jacketImg3,
+                    name: "Gray Denim Jackets",
+                    price: 860000
+                },
+                {
+                    img: jacketImg2,
+                    name: "Asymmetric Cross-Collar Jackets",
+                    price: 950000
+                },
+            ]
         }
 
     }
@@ -216,7 +274,31 @@ const HomePage = () => {
                 <TabPanel key={index}>
                     <div className="row">
                         {data[key].products.map((item, j) => (
-                            <div key={j}>{item.name}</div>
+                            <div key={j} className='col-lg-3'>
+                                <div className='featured__item'>
+                                    <div
+                                        className='featured__item-picture'
+                                        style={{ backgroundImage: `url(${item.img})` }}
+                                    >
+                                        <ul className='item-picture__hover'>
+                                            <li>
+                                                <AiOutlineEye />
+                                            </li>
+                                            <li>
+                                                <AiOutlineShoppingCart />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className='featured__item-text'>
+                                        <h6>
+                                            <Link to="">{item.name}</Link>
+                                        </h6>
+                                        <h5>
+                                            {formatter(item.price)}
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
                         ))}
                     </div>
                 </TabPanel>

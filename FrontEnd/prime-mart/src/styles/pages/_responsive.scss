@@ -18,7 +18,7 @@ $SMALL_DEVICE: "SMALL_DEVICE";
     }
 
     @else if $canvas ==$TABLET_DEVICE {
-        @media only screen and (min-width: 768px) and (max-width: 911px) {
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
             @content;
         }
     }
@@ -29,7 +29,7 @@ $SMALL_DEVICE: "SMALL_DEVICE";
         }
     }
 
-    @else if $canvas ==$TABLET_DEVICE {
+    @else if $canvas ==$SMALL_DEVICE {
         @media only screen and (max-width: 575px) {
             @content;
         }

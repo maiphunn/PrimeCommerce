@@ -16,6 +16,8 @@ import accesImg3 from "assets/users/accessories/accesImg3.png";
 import accesImg4 from "assets/users/accessories/accesImg4.png";
 import accesImg5 from "assets/users/accessories/accesImg5.png";
 import accesImg6 from "assets/users/accessories/accesImg6.png";
+import banner_item_img_1 from "assets/users/banner/banner_item_img_1.png";
+import banner_item_img_2 from "assets/users/banner/banner_item_img_2.png";
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import "./homepage.scss";
 import { AiOutlineEye, AiOutlineShoppingCart } from 'react-icons/ai';
@@ -274,7 +276,7 @@ const HomePage = () => {
                 <TabPanel key={index}>
                     <div className="row">
                         {data[key].products.map((item, j) => (
-                            <div key={j} className='col-lg-3'>
+                            <div key={j} className='col-lg-3 col-md-4 col-sm-6 col-xs-12'>
                                 <div className='featured__item'>
                                     <div
                                         className='featured__item-picture'
@@ -307,7 +309,7 @@ const HomePage = () => {
 
         return (
             <Tabs>
-                <TabList>
+                <TabList className="tab-list">
                     {tabList}
                 </TabList>
 
@@ -320,10 +322,10 @@ const HomePage = () => {
             {/* carousel begin */}
             <div className="container hero-carousel">
                 <Carousel responsive={responsive}
-                    className='hero-carousel__list'>
+                    className='hero-carousel__list '>
                     {carouselItem.map((item, index) => (
                         <div
-                            className='hero-carousel__list-item'
+                            className='hero-carousel__list-item '
                             style={{ backgroundImage: `url(${item.img})` }}
                             key={index}
                         >
@@ -345,6 +347,26 @@ const HomePage = () => {
                 </div>
             </div>
             {/* featured end  */}
+
+            {/* banner begin  */}
+            <div className='container'>
+                <div className="row banner_container">
+                    <div className="banner">
+                        <a href="">
+                            <img src={banner_item_img_1} alt="SHOP" />
+                            <span>SHOP</span>
+                        </a>
+                    </div>
+                    <div className="banner">
+                        <a href="">
+                            <img src={banner_item_img_2} alt="COLLECTION" />
+                            <span>COLLECTION</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {/* banner end  */}
+
         </>
     )
 }

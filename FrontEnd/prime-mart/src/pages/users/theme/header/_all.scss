@@ -1,0 +1,35 @@
+@use "sass:map";
+@import "styles/pages/theme";
+@import "styles/pages/all";
+
+@mixin header-small-devices {
+    .categories__hero-container {
+        margin-bottom: 30px;
+    }
+
+    .categories__search-container {
+        .categories__search {
+            .categories__search-form {
+                padding-left: unset;
+            }
+        }
+    }
+
+    .header__top,
+    .header__menu,
+    .header__cart {
+        display: none !important;
+    }
+
+    .menu__open {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+
+        svg {
+            font-size: 30px;
+            color: map.get($theme-color, "nol-text");
+        }
+    }
+}

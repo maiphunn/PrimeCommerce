@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom'
 import { ROUTERS } from './utils/index'
 import MasterLayout from './pages/users/theme/masterLayout/MasterLayout'
 import ProfileUser from './pages/users/profileUser/ProfileUser'
+import ProductsList from './pages/users/ProductsList/ProductsList'
+
 
 const renderUserRouter = () => {
     const userRouter = [
@@ -13,6 +15,10 @@ const renderUserRouter = () => {
         {
             path: ROUTERS.USER.PROFILE,
             component: <ProfileUser />
+        },
+        {
+            path: ROUTERS.USER.PRODUCT,
+            component: <ProductsList />
         }
     ]
 

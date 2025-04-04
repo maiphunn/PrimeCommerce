@@ -1,18 +1,28 @@
-import { memo, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import "./header.scss"
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { FaGoogle, FaXTwitter } from "react-icons/fa6";
 import { FiUser } from "react-icons/fi";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { GoMail } from "react-icons/go";
 import { formatter } from 'utils/format';
 import { AiOutlineShoppingCart, AiOutlineMessage, AiOutlinePhone, AiOutlineMenu, AiFillAlipayCircle, AiOutlineDownCircle, AiOutlineUpCircle, AiOutlineMail } from "react-icons/ai";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { ROUTERS } from 'utils';
 
+export const categories = [
+    "All",
+    "Top",
+    "Bottom",
+    "Jacket",
+    "Accessories"
+]
+
 const Header = () => {
-    const [isShowCategories, setIsShowCategories] = useState(false)
+    const location = useLocation()
     const [isShowNavbar, setIsShowNavbar] = useState(false)
+    const [isHome, setIsHome] = useState(location.pathname.length <= 1)
+    const [isShowCategories, setIsShowCategories] = useState(isHome)
     const [menus, setMenus] = useState([
         {
             name: "Home",
@@ -50,6 +60,12 @@ const Header = () => {
             path: ""
         }
     ])
+
+    useEffect(() => {
+        const isHome = location.pathname.length <= 1;
+        setIsHome(isHome)
+        setIsShowCategories(isHome)
+    }, [location])
 
     return (
         <>
@@ -278,11 +294,15 @@ const Header = () => {
                             List Products
                         </div>
                         {isShowCategories && (
+
                             <ul className={isShowCategories ? "" : "hidden"}>
-                                <li><Link to="">TOP</Link></li>
-                                <li><Link to="">BOTTOM</Link></li>
-                                <li><Link to="">JACKET</Link></li>
-                                <li><Link to="">ACCESSORIES</Link></li>
+                                {
+                                    categories.map((category, index) => {
+                                        return (
+                                            <li key={index}><Link to={ROUTERS.USER.PRODUCT}>{category}</Link></li>
+                                        )
+                                    })
+                                }
                             </ul>
                         )}
 
@@ -310,18 +330,20 @@ const Header = () => {
                             </div>
                         </div>
 
-                        <div className='categories__item'>
-                            <div className='categories__item-text'>
-                                <span>  Slay in every way</span>
-                                <h2> Fashion made <br /> just for you</h2>
-                                <p>Your fashion, your rules</p>
-                                <button onClick={() => {
-                                    alert("hihihi")
-                                }} type='submit' className='button-submit'>
-                                    Buy now
-                                </button>
+                        {isHome && (
+                            <div className='categories__item'>
+                                <div className='categories__item-text'>
+                                    <span>  Slay in every way</span>
+                                    <h2> Fashion made <br /> just for you</h2>
+                                    <p>Your fashion, your rules</p>
+                                    <button onClick={() => {
+                                        alert("hihihi")
+                                    }} type='submit' className='button-submit'>
+                                        Buy now
+                                    </button>
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
                 </div>
             </div >

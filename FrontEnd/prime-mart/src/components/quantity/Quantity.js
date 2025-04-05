@@ -1,7 +1,6 @@
 import { formatter } from 'utils/format';
 import { memo } from 'react';
 import "./quantity.scss"
-import { ROUTERS } from 'utils';
 import { FaMinus, FaPlus } from 'react-icons/fa';
 
 const Quantity = ({ hasAddToCart = true }) => {

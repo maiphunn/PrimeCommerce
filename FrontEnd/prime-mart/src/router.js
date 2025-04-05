@@ -3,7 +3,8 @@ import { Routes, Route } from 'react-router-dom'
 import { ROUTERS } from './utils/index'
 import MasterLayout from './pages/users/theme/masterLayout/MasterLayout'
 import ProfileUser from './pages/users/profileUser/ProfileUser'
-import ProductsList from './pages/users/ProductsList/ProductsList'
+import ProductsList from './pages/users/productsList/ProductsList'
+import ProductDetail from 'pages/users/productDetail/ProductDetail'
 
 
 const renderUserRouter = () => {
@@ -19,6 +20,10 @@ const renderUserRouter = () => {
         {
             path: ROUTERS.USER.PRODUCT,
             component: <ProductsList />
+        },
+        {
+            path: ROUTERS.USER.PRODUCT_DETAIL,
+            component: <ProductDetail />
         }
     ]
 

@@ -44,26 +44,26 @@
 .featured {
     margin-top: 50px;
 
-    .section-title {
-        text-align: center;
-        margin-bottom: 50px;
+    // .section-title {
+    //     text-align: center;
+    //     margin-bottom: 50px;
 
-        h2 {
-            position: relative;
-        }
+    //     h2 {
+    //         position: relative;
+    //     }
 
-        h2:after {
-            position: absolute;
-            right: 0;
-            left: 0;
-            bottom: -10px;
-            height: 2px;
-            width: 100px;
-            background: map.get($theme-color, "main");
-            content: "";
-            margin: 0 auto;
-        }
-    }
+    //     h2:after {
+    //         position: absolute;
+    //         right: 0;
+    //         left: 0;
+    //         bottom: -10px;
+    //         height: 2px;
+    //         width: 100px;
+    //         background: map.get($theme-color, "main");
+    //         content: "";
+    //         margin: 0 auto;
+    //     }
+    // }
 
     .react-tabs {
         ul {

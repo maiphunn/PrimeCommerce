@@ -20,7 +20,7 @@ import banner_item_img_1 from "assets/users/banner/banner_item_img_1.png";
 import banner_item_img_2 from "assets/users/banner/banner_item_img_2.png";
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import "./homepage.scss";
-import ProductsCart from 'components/productscart/ProductsCart';
+import ProductsCart from 'components/productsCart/ProductsCart';
 
 export const featuredProducts = {
     all: {

@@ -2,7 +2,7 @@ import { AiOutlineEye, AiOutlineShoppingCart } from 'react-icons/ai';
 import { formatter } from 'utils/format';
 import { Link, generatePath } from 'react-router-dom';
 import { memo } from 'react';
-import "./productscart.scss"
+import "./productsCart.scss"
 import { ROUTERS } from 'utils';
 
 const ProductsCart = ({ img, name, price }) => {

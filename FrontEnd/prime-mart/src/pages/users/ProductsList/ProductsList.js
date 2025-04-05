@@ -1,9 +1,9 @@
 import { memo } from 'react'
-import "./productslist.scss"
+import "./productsList.scss"
 import { ROUTERS } from 'utils'
 import { Link } from 'react-router-dom'
 import { categories } from '../theme/header/Header'
-import ProductsCart from 'components/productscart/ProductsCart'
+import ProductsCart from 'components/productsCart/ProductsCart'
 import { featuredProducts } from '../home/HomePage'
 
 const ProductsList = () => {

@@ -1,0 +1,46 @@
+@use "sass:map";
+@import "styles/pages/theme";
+@import "styles/pages/all";
+
+.admin-header {
+    background: #fff;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    &__nav {
+        height: 50px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            color: map.get($theme-color, "nol-text");
+            transition: all 0.2s ease;
+            cursor: pointer;
+
+            &:hover {
+                color: map.get($theme-color, "main");
+                background-color: #3182ce14;
+            }
+
+            &--active {
+                color: map.get($theme-color, "main");
+                background-color: #3182ce14;
+            }
+        }
+
+        .nav-item__icon {
+            display: flex;
+            align-items: center;
+        }
+    }
+}

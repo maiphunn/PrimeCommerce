@@ -130,6 +130,7 @@ $bannerImg: "/assets/users/banner2.png";
                     margin-left: 6px;
                 }
             }
+
         }
     }
 
@@ -365,6 +366,12 @@ $bannerImg: "/assets/users/banner2.png";
     // position: relative;
     display: flex;
     flex-direction: column;
+
+    .ShowCategories {
+        position: absolute;
+        width: 276px;
+        top: 170px;
+    }
 
 
 

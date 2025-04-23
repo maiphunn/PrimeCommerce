@@ -295,7 +295,7 @@ const Header = () => {
                         </div>
                         {isShowCategories && (
 
-                            <ul className={isShowCategories ? "" : "hidden"}>
+                            <ul className={isShowCategories ? "ShowCategories" : "hidden"}>
                                 {
                                     categories.map((category, index) => {
                                         return (

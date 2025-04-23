@@ -6,13 +6,7 @@ import ProfileUser from './pages/users/profileUser/ProfileUser'
 import ProductDetail from 'pages/users/productDetail/ProductDetail'
 import ShoppingCartPage from 'pages/users/shoppingCart/ShoppingCartPage'
 import CheckoutPage from 'pages/users/checkoutPage/CheckoutPage'
-<<<<<<< Updated upstream
-=======
-import LoginPage from 'pages/admin/loginPage/LoginPage'
-import MasterAdLayout from 'pages/admin/theme/masterLayout/MasterAdLayout'
-import OrderAdPage from 'pages/admin/orderAdPage/OrderAdPage'
 import ProductsList from 'pages/users/ProductsList/ProductsList'
->>>>>>> Stashed changes
 
 
 const renderUserRouter = () => {

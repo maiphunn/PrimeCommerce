@@ -206,10 +206,6 @@ export const featuredProducts = {
     }
 
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 const HomePage = () => {
     const responsive = {
         superLargeDesktop: {
@@ -261,10 +257,6 @@ const HomePage = () => {
             name: "CHROMIUM Keychain"
         },
     ]
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
     const renderFeaturedProducts = (data) => {
         const tabList = [];
         const tabPanels = [];
@@ -282,10 +274,6 @@ const HomePage = () => {
                         {data[key].products.map((item, j) => (
                             <div key={j} className='col-lg-3 col-md-4 col-sm-6 col-xs-12'>
                                 <ProductsCart img={item.img} name={item.name} price={item.price} />
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
                             </div>
                         ))}
                     </div>

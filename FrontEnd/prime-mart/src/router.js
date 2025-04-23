@@ -3,13 +3,14 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { ADMIN_PATH, ROUTERS } from './utils/index'
 import MasterLayout from './pages/users/theme/masterLayout/MasterLayout'
 import ProfileUser from './pages/users/profileUser/ProfileUser'
-import ProductsList from './pages/users/productsList/ProductsList'
 import ProductDetail from 'pages/users/productDetail/ProductDetail'
 import ShoppingCartPage from 'pages/users/shoppingCart/ShoppingCartPage'
 import CheckoutPage from 'pages/users/checkoutPage/CheckoutPage'
+import ProductsList from 'pages/users/ProductsList/ProductsList'
 import LoginPage from 'pages/admin/loginPage/LoginPage'
 import MasterAdLayout from 'pages/admin/theme/masterLayout/MasterAdLayout'
 import OrderAdPage from 'pages/admin/orderAdPage/OrderAdPage'
+
 
 
 const renderUserRouter = () => {

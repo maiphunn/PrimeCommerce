@@ -130,6 +130,7 @@ $bannerImg: "/assets/users/banner2.png";
                     margin-left: 6px;
                 }
             }
+
         }
     }
 
@@ -364,6 +365,12 @@ $bannerImg: "/assets/users/banner2.png";
 .categories__hero-container {
     display: flex;
     flex-direction: column;
+  
+    .ShowCategories {
+        position: absolute;
+        width: 276px;
+        top: 170px;
+    }
 
     .categories__hero-title {
         background: map.get($theme-color, "main");

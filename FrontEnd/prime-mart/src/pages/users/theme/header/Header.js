@@ -290,7 +290,7 @@ const Header = () => {
                             List Products
                         </div>
                         {isShowCategories && (
-
+                            <ul className={isShowCategories ? "ShowCategories" : "hidden"}>
                             <ul className={isShowCategories ? "showProducts" : "hidden"}>
                                 {
                                     categories.map((category, index) => {

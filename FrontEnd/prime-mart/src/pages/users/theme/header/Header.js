@@ -1,12 +1,12 @@
 import { memo, useEffect, useState } from 'react'
 import "./header.scss"
-import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
+import { FaFacebookSquare, FaLinkedin, FaUser } from "react-icons/fa";
 import { FaGoogle, FaXTwitter } from "react-icons/fa6";
 import { FiUser } from "react-icons/fi";
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { GoMail } from "react-icons/go";
 import { formatter } from 'utils/format';
-import { AiOutlineShoppingCart, AiOutlineMessage, AiOutlinePhone, AiOutlineMenu, AiFillAlipayCircle, AiOutlineDownCircle, AiOutlineUpCircle, AiOutlineMail } from "react-icons/ai";
+import { AiOutlineShoppingCart, AiOutlineMessage, AiOutlinePhone, AiOutlineMenu, AiFillAlipayCircle, AiOutlineDownCircle, AiOutlineUpCircle, AiOutlineMail, AiOutlineUser } from "react-icons/ai";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { ROUTERS } from 'utils';
 
@@ -19,6 +19,7 @@ export const categories = [
 ]
 
 const Header = () => {
+    const navigate = useNavigate();
     const location = useLocation()
     const [isShowNavbar, setIsShowNavbar] = useState(false)
     const [isHome, setIsHome] = useState(location.pathname.length <= 1)
@@ -212,13 +213,10 @@ const Header = () => {
                                         <FaXTwitter />
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link to={""}>
-                                        <FiUser />
-                                    </Link>
+                                <li onClick={() => { navigate(ROUTERS.ADMIN.LOGIN) }}>
+                                    <AiOutlineUser />
                                     <span>Login</span>
                                 </li>
-
                             </ul>
                         </div>
                     </div>
@@ -238,9 +236,7 @@ const Header = () => {
                                     <li key={menuKey} className={menuKey === 0 ? 'active' : ""}>
                                         <Link to={menu.path}>
                                             {menu.name}
-                                            {/* {menu.subMenu && menu.isShowSubMenu ? (<AiOutlineDownCircle />) : ""} */}
                                         </Link>
-
                                         {
                                             menu.subMenu && (
                                                 <ul className='header__submenu'>
@@ -294,8 +290,8 @@ const Header = () => {
                             List Products
                         </div>
                         {isShowCategories && (
-
                             <ul className={isShowCategories ? "ShowCategories" : "hidden"}>
+                            <ul className={isShowCategories ? "showProducts" : "hidden"}>
                                 {
                                     categories.map((category, index) => {
                                         return (

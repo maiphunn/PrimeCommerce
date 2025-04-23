@@ -20,6 +20,7 @@ import banner_item_img_1 from "assets/users/banner/banner_item_img_1.png";
 import banner_item_img_2 from "assets/users/banner/banner_item_img_2.png";
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import "./homepage.scss";
+
 import ProductsCart from 'components/productsCart/ProductsCart';
 
 export const featuredProducts = {
@@ -206,6 +207,7 @@ export const featuredProducts = {
     }
 
 }
+
 const HomePage = () => {
     const responsive = {
         superLargeDesktop: {
@@ -274,6 +276,30 @@ const HomePage = () => {
                         {data[key].products.map((item, j) => (
                             <div key={j} className='col-lg-3 col-md-4 col-sm-6 col-xs-12'>
                                 <ProductsCart img={item.img} name={item.name} price={item.price} />
+                            <div key={j} className='col-lg-3'>
+                                <div className='featured__item'>
+                                    <div
+                                        className='featured__item-picture'
+                                        style={{ backgroundImage: `url(${item.img})` }}
+                                    >
+                                        <ul className='item-picture__hover'>
+                                            <li>
+                                                <AiOutlineEye />
+                                            </li>
+                                            <li>
+                                                <AiOutlineShoppingCart />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className='featured__item-text'>
+                                        <h6>
+                                            <Link to="">{item.name}</Link>
+                                        </h6>
+                                        <h5>
+                                            {formatter(item.price)}
+                                        </h5>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>

@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import Footer from '../footer/Footer';
+import Footer from '../../../common/footer/Footer';
 import Header from '../header/Header';
 
 const MasterLayout = ({ children, ...props }) => {

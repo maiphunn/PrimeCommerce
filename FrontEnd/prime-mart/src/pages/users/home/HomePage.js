@@ -16,8 +16,197 @@ import accesImg3 from "assets/users/accessories/accesImg3.png";
 import accesImg4 from "assets/users/accessories/accesImg4.png";
 import accesImg5 from "assets/users/accessories/accesImg5.png";
 import accesImg6 from "assets/users/accessories/accesImg6.png";
+import banner_item_img_1 from "assets/users/banner/banner_item_img_1.png";
+import banner_item_img_2 from "assets/users/banner/banner_item_img_2.png";
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import "./homepage.scss";
+
+import ProductsCart from 'components/productsCart/ProductsCart';
+
+export const featuredProducts = {
+    all: {
+        title: "All",
+        products: [
+            {
+                img: accesImg5,
+                name: "Canvas Tote Bag",
+                price: 860000
+            },
+            {
+                img: accesImg1,
+                name: "CHROMIUM Keychain",
+                price: 180000
+            },
+            {
+                img: jacketImg1,
+                name: "Denim Jackets",
+                price: 850000
+            },
+            {
+                img: jacketImg3,
+                name: "Gray Denim Jackets",
+                price: 860000
+            },
+            {
+                img: jacketImg2,
+                name: "Asymmetric Cross-Collar Jackets",
+                price: 950000
+            },
+            {
+                img: topImg1,
+                name: " Black Longsleeve",
+                price: 630000
+            },
+            {
+                img: topImg2,
+                name: "LF T-Shirts",
+                price: 630000
+            },
+            {
+                img: topImg3,
+                name: "Washed Olive NNTS T-Shirts",
+                price: 500000
+            },
+            {
+                img: accesImg2,
+                name: "Scarf",
+                price: 580
+            },
+            {
+                img: accesImg3,
+                name: "LoadMaster Hauler Bag",
+                price: 860
+            },
+            {
+                img: accesImg6,
+                name: "R-Hood",
+                price: 860
+            },
+            {
+                img: accesImg4,
+                name: "CRUX Keychain",
+                price: 860
+            },
+            {
+                img: bottomImg2,
+                name: "Canvas Tote Bag",
+                price: 860
+            },
+            {
+                img: bottomImg3,
+                name: "Canvas Tote Bag",
+                price: 860
+            },
+            {
+                img: accesImg2,
+                name: "Canvas Tote Bag",
+                price: 860
+            },
+            {
+                img: bottomImg1,
+                name: "Camo Shorts",
+                price: 860000
+            },
+        ]
+    },
+    top: {
+        title: "Top",
+        products: [
+            {
+                img: topImg1,
+                name: " Black Longsleeve",
+                price: 630000
+            },
+            {
+                img: topImg2,
+                name: "LF T-Shirts",
+                price: 630000
+            },
+            {
+                img: topImg3,
+                name: "Washed Olive NNTS T-Shirts",
+                price: 500000
+            }
+        ]
+    },
+    bottom: {
+        title: "Bottom",
+        products: [
+            {
+                img: bottomImg1,
+                name: "Camo Shorts",
+                price: 860000
+            },
+            {
+                img: bottomImg1,
+                name: "Camo Shorts",
+                price: 860000
+            },
+
+            {
+                img: bottomImg1,
+                name: "Camo Shorts",
+                price: 860000
+            }
+        ]
+    },
+    accessories: {
+        title: "Accessories",
+        products: [
+            {
+                img: accesImg5,
+                name: "Canvas Tote Bag",
+                price: 860000
+            },
+            {
+                img: accesImg1,
+                name: "CHROMIUM Keychain",
+                price: 180000
+            },
+            {
+                img: accesImg2,
+                name: "Scarf",
+                price: 580
+            },
+            {
+                img: accesImg3,
+                name: "LoadMaster Hauler Bag",
+                price: 860
+            },
+            {
+                img: accesImg6,
+                name: "R-Hood",
+                price: 860
+            },
+            {
+                img: accesImg4,
+                name: "CRUX Keychain",
+                price: 860
+            },
+        ]
+    },
+    jacket: {
+        title: "Jacket",
+        products: [
+            {
+                img: jacketImg1,
+                name: "Denim Jackets",
+                price: 850000
+            },
+            {
+                img: jacketImg3,
+                name: "Gray Denim Jackets",
+                price: 860000
+            },
+            {
+                img: jacketImg2,
+                name: "Asymmetric Cross-Collar Jackets",
+                price: 950000
+            },
+        ]
+    }
+
+}
 import { AiOutlineEye, AiOutlineShoppingCart } from 'react-icons/ai';
 import { formatter } from 'utils/format';
 import { Link } from 'react-router-dom';
@@ -274,6 +463,8 @@ const HomePage = () => {
                 <TabPanel key={index}>
                     <div className="row">
                         {data[key].products.map((item, j) => (
+                            <div key={j} className='col-lg-3 col-md-4 col-sm-6 col-xs-12'>
+                                <ProductsCart img={item.img} name={item.name} price={item.price} />
                             <div key={j} className='col-lg-3'>
                                 <div className='featured__item'>
                                     <div
@@ -307,7 +498,7 @@ const HomePage = () => {
 
         return (
             <Tabs>
-                <TabList>
+                <TabList className="tab-list">
                     {tabList}
                 </TabList>
 
@@ -320,10 +511,10 @@ const HomePage = () => {
             {/* carousel begin */}
             <div className="container hero-carousel">
                 <Carousel responsive={responsive}
-                    className='hero-carousel__list'>
+                    className='hero-carousel__list '>
                     {carouselItem.map((item, index) => (
                         <div
-                            className='hero-carousel__list-item'
+                            className='hero-carousel__list-item '
                             style={{ backgroundImage: `url(${item.img})` }}
                             key={index}
                         >
@@ -345,6 +536,26 @@ const HomePage = () => {
                 </div>
             </div>
             {/* featured end  */}
+
+            {/* banner begin  */}
+            <div className='container'>
+                <div className="row banner_container">
+                    <div className="banner">
+                        <a href="">
+                            <img src={banner_item_img_1} alt="SHOP" />
+                            <span>SHOP</span>
+                        </a>
+                    </div>
+                    <div className="banner">
+                        <a href="">
+                            <img src={banner_item_img_2} alt="COLLECTION" />
+                            <span>COLLECTION</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {/* banner end  */}
+
         </>
     )
 }

@@ -1,0 +1,140 @@
+@use "sass:map";
+@import "styles/pages/theme";
+@import "styles/pages/all";
+
+.product-detail {
+    // display: flex;
+    // gap: 10px;
+}
+
+.product-detail__picture {
+    display: flex;
+    column-gap: 10px;
+
+
+    img {
+        // flex: 0 0 75% !important;
+        object-fit: cover;
+        width: 60%;
+    }
+
+    .detail__picture-main {
+        // flex: 0 0 20%;
+        width: 25%;
+        display: grid;
+        align-items: stretch;
+
+
+        img {
+            width: 90%;
+            object-fit: cover;
+
+            &:not(:first-child) {
+                padding-top: 6px;
+            }
+        }
+    }
+}
+
+.product-detail__text {
+    h2 {
+        color: map.get($theme-color, "nol-text");
+        font-weight: 700;
+    }
+
+    .seen-eye {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        line-height: 30px;
+        column-gap: 4px;
+        color: #6f6f6f;
+
+    }
+
+    h3 {}
+
+    p {
+        padding: 10px 0;
+        line-height: 10px;
+    }
+
+    ul {
+        padding: 20px 0;
+        // border-bottom: 1px solid #eee;
+
+        li {
+            list-style: none;
+            display: flex;
+            column-gap: 20px;
+            line-height: 30px;
+            padding: 10px 0;
+
+            b {
+                width: 150px;
+            }
+
+            span {
+                display: flex;
+                column-gap: 10px;
+                align-items: center;
+
+                svg {
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+}
+
+.product-content {
+    margin: 20px 0;
+
+    h4 {
+        position: relative;
+        text-align: center;
+        margin-bottom: 20px;
+
+        &::after {
+            position: absolute;
+            right: 0;
+            top: 12px;
+            height: 1px;
+            width: 43%;
+            background-color: #ebebeb;
+            content: "";
+        }
+
+        &::before {
+            position: absolute;
+            left: 0;
+            top: 12px;
+            height: 1px;
+            width: 43%;
+            background-color: #ebebeb;
+            content: "";
+        }
+
+        &::after,
+        &::before {
+            @include Responsive($TABLET_DEVICE) {
+                width: 38%;
+            }
+
+            @include Responsive($WIDE_DEVICE) {
+                width: 34%;
+            }
+
+            @include Responsive($SMALL_DEVICE) {
+                width: 29%;
+            }
+        }
+    }
+
+    ul li {
+        list-style: none;
+        margin-bottom: 20px;
+    }
+}

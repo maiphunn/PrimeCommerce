@@ -1,11 +1,17 @@
+export const ADMIN_PATH = "/admin"
+
 export const ROUTERS = {
     USER: {
         HOME: "",
-        PROFILE: "thong-tin-ca-nhan",
-        PRODUCT: "/san-pham",
-        CART: "/gio-hang",
-        CHECKOUT: "/thanh-toan",
-        ORDER: "/don-hang",
-        ORDER_DETAIL: "/chi-tiet-don-hang"
+        PROFILE: "/user-profile",
+        PRODUCT: "/products",
+        PRODUCT_DETAIL: "/product-detail/:id",
+        CART: "/cart",
+        CHECKOUT: "/checkout",
+    },
+    ADMIN: {
+        LOGIN: `${ADMIN_PATH}/login`,
+        ORDER: `${ADMIN_PATH}/order`,
+        LOGOUT: `${ADMIN_PATH}/logout`,
     }
 }
